@@ -61,11 +61,14 @@ img
 
 .container
 { /*This is the where all the infomation on the page lies*/
-	width: 90%;
+	width: 100%;
 	background-color: #FFFFFF;
 	margin: 0 auto; 
 	text-align: left;
     border: 4px solid;
+    flex-wrap: wrap;
+    display:flex;
+    flex-direction:row;
 }
 
 header
@@ -78,21 +81,18 @@ header
 
 .sidebar1
 { /*The sidebar of the page this is used to put infomation*/
-	float: left;
-	width: 10%;
-    height:100%;
 	background-color:#909090;
 	padding-bottom: 3px;
 	text-align: left;
     border-right:2px solid;
+    flex: 15; 
+    height:auto;
 }
 
 .content
 { /*Where the main writing of the page is held*/
-	padding: 10px 0;
-	width: 760px;
-	float: right;
-    width: 80%;
+    flex: 80; 
+    height:auto;
 }
 
 .content ul, .content ol
@@ -172,11 +172,9 @@ nav p
 nav
 {
 	text-align: right;
-	padding-right: 5px;
-	padding-top: 2px;
-	padding-bottom: 2px;
 	font-weight: bold;
     width: 100%;
+    height:100%;
 }
 
 nav p a:hover  , nav p a:active, nav p a:focus
@@ -211,4 +209,11 @@ a
   flex-basis: 100%;
   flex: 1; 
   height:auto;
+}
+
+
+@media screen and (max-width: 700px) {
+  .container {   
+    flex-direction: column;
+  }
 }
